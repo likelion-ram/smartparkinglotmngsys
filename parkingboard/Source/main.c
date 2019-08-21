@@ -25,10 +25,10 @@ int main(void)
 	Factory_Default();
 #endif
         LED_On();
-	Uart1_Printf("Wifi server command mode Test\n");
+	//Uart1_Printf("Wifi server command mode Test\n");
         
 	for(;;){
-	        
+	        //Uart1_Printf("in?\n");      
                 if(TIM4_Expired)
 		{
 			TIM4_Expired = 0;
@@ -44,7 +44,8 @@ int main(void)
                 if(Flag_send)
                 {
                         //Uart2_Send_String("AT+SSEND=0,,,5\rHello\r");
-                        Uart1_Printf("aa\n");
+                        //Uart1_Printf("aa\n");
+                        Flag_send=0;
                 }
         
         }

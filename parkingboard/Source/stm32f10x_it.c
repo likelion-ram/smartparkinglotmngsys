@@ -488,7 +488,8 @@ void ADC1_2_IRQHandler(void)
     ADC1_value = ADC1->DR;
     //Uart1_Printf("ADC IT\n");
     ADC1_value = (ADC1_value*3.3)/4096.;
-    if(ADC1_value <0.5){    
+    //Uart1_Printf("adc is %d\n", ADC1_value);
+    if(ADC1_value <=1){    
       LED_Off();    
       if(Flag_old==1){ Flag_send=1; Flag_old=0; Uart2_Send_String("AT+SSEND=0,,,2\rIn\r");
       Uart1_Printf("car in\n");}
@@ -501,7 +502,7 @@ void ADC1_2_IRQHandler(void)
       //Uart2_Send_String("AT+SSEND=0,,,5\rout\r");
       }
     }
-    Flag_send=0;
+    //Flag_send=1;
     NVIC_ClearPendingIRQ((IRQn_Type)18);
 }
 
@@ -773,7 +774,7 @@ void USART2_IRQHandler(void)
 	{
 		data1=(char)USART2->DR;
 		USART_ClearITPendingBit(USART2, USART_IT_RXNE);
-		
+		//Uart1_Prinft("here??\n");
 		Uart1_Send_Byte(data1);
 	}
 }

@@ -564,7 +564,7 @@ uint16_t SPI_I2S_ReceiveData(SPI_TypeDef* SPIx)
 {
   /* Check the parameters */
   assert_param(IS_SPI_ALL_PERIPH(SPIx));
-  
+  Uart1_Printf("설마..여기?\n");
   /* Return the data in the DR register */
   return SPIx->DR;
 }

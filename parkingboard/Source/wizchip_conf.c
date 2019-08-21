@@ -183,11 +183,13 @@ void reg_wizchip_spi_cbfunc(uint8_t (*spi_rb)(void), void (*spi_wb)(uint8_t wb))
    {
       WIZCHIP.IF.SPI._read_byte   = wizchip_spi_readbyte;
       WIZCHIP.IF.SPI._write_byte  = wizchip_spi_writebyte;
+      Uart1_Printf("yess1\n");
    }
    else
    {
       WIZCHIP.IF.SPI._read_byte   = spi_rb;
       WIZCHIP.IF.SPI._write_byte  = spi_wb;
+      Uart1_Printf("yess2\n");
    }
 }
 
