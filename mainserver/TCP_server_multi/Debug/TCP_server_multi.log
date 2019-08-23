@@ -1,0 +1,3 @@
+﻿  소스.c
+c:\users\student\source\repos\tcp_server_multi\tcp_server_multi\소스.c(158): warning C4101: 'send_out' :참조되지 않은 지역 변수입니다.
+  TCP_server_multi.vcxproj -> C:\Users\student\source\repos\TCP_server_multi\Debug\TCP_server_multi.exe
